@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,6 +13,24 @@
 </head>
 
 <body>
+
+    <!--Toast-->
+
+    <div id="myToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+        <div class="toast-header">
+            <img src="..." class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Academy Cinemas</strong>
+            <small>just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Welcome to Academy Cinemas! We hope you enjoy your stay!
+        </div>
+    </div>
+
+    <!--/Toast-->
 
     <div class="container">
 
@@ -69,13 +87,13 @@
                     <h3>Now Playing:</h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a class="nav-link" href="#">Kong: Skull Island</a>
+                            <a class="nav-link" href="#kong">Kong: Skull Island</a>
                         </li>
                         <li class="list-group-item">
-                            <a class="nav-link" href="#">Ghost in the Shell</a>
+                            <a class="nav-link" href="#ghost">Ghost in the Shell</a>
                         </li>
                         <li class="list-group-item">
-                            <a class="nav-link" href="#">Beauty and the Beast</a>
+                            <a class="nav-link" href="#beaty">Beauty and the Beast</a>
                         </li>
                     </ul>
 
@@ -90,7 +108,7 @@
         <!-- showtimes -->
         <h1>Showtimes:</h1>
         <div id="showtimes" class="card-deck">
-            <div class="card">
+            <div class="card" id="beauty">
                 <img src="./images/beautyandthebeast.jpg" class="card-img-top" alt="...">
                 <div class="card-block">
                     <h5 class="card-title">Beauty and the Beast</h5>
@@ -103,7 +121,7 @@
                     <span class="badge badge-pill badge-primary">9:30 p.m.</span>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="ghost">
                 <img src="./images/ghostintheshell.jpg" class="card-img-top" alt="...">
                 <div class="card-block">
                     <h5 class="card-title">Ghost in the Shell</h5>
@@ -116,7 +134,7 @@
                     <span class="badge badge-pill badge-primary">9:30 p.m.</span>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="kong">
                 <img src="./images/kongskullisland.jpg" class="card-img-top" alt="...">
                 <div class="card-block">
                     <h5 class="card-title">Kong: Skull Island</h5>
@@ -139,9 +157,57 @@
                 <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary btn-info popover-dismiss" data-container="body" data-toggle="popover" data-placement="top" data-content="Submit your email to receive great movie reward deals!">
+                    Sign up!
+                </button>
             </form>
         </div>
+
+        <!--Form modal-->
+        <div class="text-center mt-5">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#register">See our monthly movie deals!</button>
+        </div>
+
+        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register to receive movie deals...</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <fieldset class="form-group">
+                                <label for="firstname">First Name:</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="First Name..." />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name..." />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email..." />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password..." />
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/form modal-->
 
         <div class="container my-5">
             <ul class="nav nav-inline">
@@ -166,11 +232,24 @@
 
     </div>
 
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+
+            $('#myToast').toast('show');
+        
+
+    </script>
+
 </body>
 
 </html>
